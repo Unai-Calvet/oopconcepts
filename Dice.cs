@@ -1,29 +1,24 @@
 ﻿using System;
 namespace oopconcepts {
-    public class Dice {
-        public string Color { get; set; }
+    public class Dice:BoardGamePiece {
         public int NumberOfFaces { get; set; }
 
         // Builders
-        public Dice(string color, int numberOfFaces) {
-            Color = color;
+        public Dice(string color, int numberOfFaces) : base (color) {
             NumberOfFaces = numberOfFaces;
         }
-        public Dice(string color) { 
-            Color = color;
+        public Dice(string color): base(color) { 
             NumberOfFaces = 6;
         }
         public Dice(int numberOfFaces) {
-            Color = "White";
             NumberOfFaces = numberOfFaces;
         }
         public Dice() {
-            Color = "White";
             NumberOfFaces = 6;
         }
 
         // Functional methods
-        public void Buy() {
+        public override void Buy() {
             Console.WriteLine("Buying a dice");
         }
         public void Roll() {
